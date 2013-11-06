@@ -4,7 +4,9 @@ window.ColorsForUs = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    console.log('Hello from Backbone!');
+    new this.Routers.Palettes();
+    Backbone.history.start();
   }
 };
 

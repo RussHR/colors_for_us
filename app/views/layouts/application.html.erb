@@ -7,12 +7,6 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     
-    <header>
-      <% if current_user %>
-        Hello, <%= current_user.email %>
-        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-      <% end %>
-    </header>
   </head>
   <body>
     <p class="notice"><%= notice %></p>
