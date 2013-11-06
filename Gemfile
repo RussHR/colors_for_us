@@ -16,5 +16,6 @@ group :development do
   gem 'letter_opener'
 end
 
+gem 'devise'
 gem 'figaro'
 gem 'jquery-rails'
