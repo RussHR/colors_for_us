@@ -11,6 +11,15 @@ class User < ActiveRecord::Base
   
   has_many :authentications
   
+  def apply_omniauth(omniauth)
+    self.email = omniauth['info']['email'] if email.blank?
+    authentications.build(provider: omniauth['provider'], uid: omniauth['uid'])
+  end
+  
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
+  end
+  
   private
   
   def send_welcome_email
@@ -18,4 +27,5 @@ class User < ActiveRecord::Base
     msg = UserMailer.welcome_email(self)
     msg.deliver!
   end
+  
 end
