@@ -1,5 +1,14 @@
 Palettes:
 
-<% palettes.forEach(function(palette) { %>
-  <%= palette.get("name") %>
-<% }); %>
+<ul>
+  <% palettes.forEach(function(palette) { %>
+    <li>
+      <%= palette.get('name') %>
+      <div style="height: 50px; width: 100px">
+        <% palette.colors().forEach(function(color){ %>
+          <div style="float: left; background-color: <%= color %>; width: <%= palette.divPercentWidth() %>%; height: 50px"></div>
+        <% }) %>
+      </div>
+    </li>
+  <% }); %>
+</ul>
