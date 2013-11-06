@@ -20,3 +20,5 @@ end
 gem 'devise'
 gem 'figaro'
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'

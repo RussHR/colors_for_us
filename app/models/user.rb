@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_email
   
+  has_many :authentications
+  
   private
   
   def send_welcome_email
