@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106184729) do
+ActiveRecord::Schema.define(:version => 20131106185613) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(:version => 20131106184729) do
   end
 
   add_index "authentications", ["uid"], :name => "index_authentications_on_uid"
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "palette_id", :null => false
+    t.integer  "giver_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "favorites", ["giver_id"], :name => "index_favorites_on_giver_id"
+  add_index "favorites", ["palette_id"], :name => "index_favorites_on_palette_id"
 
   create_table "palettes", :force => true do |t|
     t.string   "color_1",    :null => false

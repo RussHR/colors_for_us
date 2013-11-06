@@ -9,4 +9,8 @@ class Palette < ActiveRecord::Base
     :primary_key => :id,
     :foreign_key => :creator_id
   )
+  
+  has_many :favorites
+  
+  has_many :favoriting_users, :through => :favorites, :source => :giver
 end

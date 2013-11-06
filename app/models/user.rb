@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
     :primary_key => :id,
     :foreign_key => :creator_id
   )
+  has_many(
+    :favorites,
+    :class_name => "Favorite",
+    :primary_key => :id,
+    :foreign_key => :giver_id
+  )
+  
+  has_many :favorite_palettes, :through => :favorites, :source => :palette
   
   def apply_omniauth(omniauth)
     self.email = omniauth['info']['email'] if email.blank?
