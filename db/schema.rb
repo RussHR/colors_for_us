@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106064902) do
+ActiveRecord::Schema.define(:version => 20131106184729) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(:version => 20131106064902) do
   end
 
   add_index "authentications", ["uid"], :name => "index_authentications_on_uid"
+
+  create_table "palettes", :force => true do |t|
+    t.string   "color_1",    :null => false
+    t.string   "color_2"
+    t.string   "color_3"
+    t.string   "color_4"
+    t.string   "color_5"
+    t.integer  "creator_id", :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "palettes", ["creator_id"], :name => "index_palettes_on_creator_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

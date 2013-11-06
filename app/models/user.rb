@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
   
   has_many :authentications
+  has_many(
+    :palettes,
+    :class_name => "Palette",
+    :primary_key => :id,
+    :foreign_key => :creator_id
+  )
   
   def apply_omniauth(omniauth)
     self.email = omniauth['info']['email'] if email.blank?
