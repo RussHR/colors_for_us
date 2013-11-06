@@ -1,7 +1,8 @@
 class Palette < ActiveRecord::Base
-  attr_accessible :color_1, :color_2, :color_3, :color_4, :color_5, :creator_id
+  attr_accessible :color_1, :color_2, :color_3, :color_4, :color_5,
+                  :creator_id, :name
   
-  validates :color_1, :creator_id, presence: true
+  validates :color_1, :creator_id, :name, presence: true
   
   belongs_to(
     :creator,
