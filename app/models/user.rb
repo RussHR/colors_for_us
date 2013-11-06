@@ -27,5 +27,4 @@ class User < ActiveRecord::Base
     msg = UserMailer.welcome_email(self)
     msg.deliver!
   end
-  
 end
