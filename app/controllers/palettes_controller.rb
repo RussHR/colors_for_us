@@ -3,7 +3,7 @@ class PalettesController < ApplicationController
   respond_to :json
   
   def index
-    @palettes = Palette.all
+    @palettes = Palette.all.reverse
     render :json => @palettes
   end
 end
