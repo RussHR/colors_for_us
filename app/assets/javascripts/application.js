@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require colors_for_us
+//= require colorpicker.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

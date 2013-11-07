@@ -1,7 +1,8 @@
 ColorsForUs.Routers.Palettes = Backbone.Router.extend({
   routes: {
    "_=_": "showPaletteIndex",
-   "": "showPaletteIndex"
+   "": "showPaletteIndex",
+   "new": "showNewPalette"
   },
   
   showPaletteIndex: function() {
@@ -15,6 +16,11 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
         that._swapView(indexView);
       }
     });
+  },
+  
+  showNewPalette: function() {
+    var newView = new ColorsForUs.Views.NewPalette();
+    this._swapView(newView);
   },
   
   _swapView: function(newView) {

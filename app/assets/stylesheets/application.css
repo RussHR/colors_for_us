@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require colorpicker.css.scss
  *= require_tree .
  */
 
@@ -25,4 +26,8 @@ header {
 #content, .notice, .alert {
   margin-top: 3.5em;
   background-color: #bdc3c7;
+}
+
+#content {
+  overflow: auto;
 }
