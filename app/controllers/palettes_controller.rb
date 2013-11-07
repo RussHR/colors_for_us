@@ -17,4 +17,9 @@ class PalettesController < ApplicationController
       render :json => @palette.errors.full_messages, :status => 422
     end
   end
+  
+  def show
+    @palette = Palette.find(params[:id])
+    render :json => @palette
+  end
 end

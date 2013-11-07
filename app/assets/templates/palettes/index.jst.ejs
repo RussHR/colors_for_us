@@ -4,12 +4,17 @@ Palettes:
 <ul>
   <% palettes.forEach(function(palette) { %>
     <li>
+    <a href="#/<%= palette.get('id')%>">
       <%= palette.get('name') %>
       <div class="index-palette">
         <% palette.colors().forEach(function(color){ %>
-          <div class="index-palette-swatch" style="background-color: <%= color %>; width: <%= palette.divPercentWidth() %>%"></div>
+          <div class="index-palette-swatch" 
+            style="background-color: <%= color %>; 
+            width: <%= palette.divPercentWidth() %>%">
+          </div>
         <% }) %>
       </div>
+      </a>
     </li>
   <% }); %>
 </ul>

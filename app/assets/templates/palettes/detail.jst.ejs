@@ -1,0 +1,10 @@
+<h1><%= palette.get('name') %></h1>
+
+<div class="detail-palette">
+  <% palette.colors().forEach(function(color){ %>
+    <div class="index-palette-swatch" 
+      style="background-color: <%= color %>; 
+      width: <%= palette.divPercentWidth() %>%">
+    </div>
+  <% }) %>
+</div>
