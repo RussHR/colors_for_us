@@ -29,6 +29,7 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
       palette.save({}, {
         success: function() {
           console.log("You made a palette!");
+          Backbone.history.navigate("", {trigger: true});
         }
       });
     }
