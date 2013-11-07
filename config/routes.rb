@@ -4,6 +4,6 @@ ColorsForUs::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'registrations'}
   resources :authentications, :only => [:index, :create, :destroy]
   
-  resources :palettes, :only => [:index]
+  resources :palettes, :only => [:index, :create]
   root to: "Root#root"
 end
