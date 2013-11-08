@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106220917) do
+ActiveRecord::Schema.define(:version => 20131108191229) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20131106220917) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "favorites", ["giver_id", "palette_id"], :name => "index_favorites_on_giver_id_and_palette_id"
   add_index "favorites", ["giver_id"], :name => "index_favorites_on_giver_id"
   add_index "favorites", ["palette_id"], :name => "index_favorites_on_palette_id"
 

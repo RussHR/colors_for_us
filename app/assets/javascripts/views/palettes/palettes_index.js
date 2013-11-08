@@ -21,7 +21,15 @@ ColorsForUs.Views.PalettesIndex = Backbone.View.extend({
   },
   
   createFavorite: function(paletteID) {
-    console.log("favorite!", paletteID);
+    var favorite = new ColorsForUs.Models.Favorite({
+      palette_id: paletteID
+    });
+    
+    favorite.save({
+      success: function() {
+        console.log("you favorited this!");
+      }
+    });
   },
   
   removeFavorite: function(paletteID) {

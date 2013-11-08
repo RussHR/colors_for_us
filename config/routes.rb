@@ -5,5 +5,6 @@ ColorsForUs::Application.routes.draw do
   resources :authentications, :only => [:index, :create, :destroy]
   
   resources :palettes, :only => [:index, :create, :show]
+  resources :favorites, :only => [:create]
   root to: "Root#root"
 end
