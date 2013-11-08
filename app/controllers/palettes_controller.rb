@@ -3,8 +3,8 @@ class PalettesController < ApplicationController
   respond_to :json
   
   def index
-    @palettes = Palette.all.reverse
-    render :json => @palettes
+    @palettes = Palette.includes(:favorites).all.reverse
+    render :json => @palettes, :include => :favorites
   end
   
   def create
