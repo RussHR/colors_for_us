@@ -7,8 +7,25 @@ ColorsForUs.Views.PalettesIndex = Backbone.View.extend({
   
   toggleFavorite: function(event) {
     var $button = $(event.currentTarget);
-    var $buttons = $button.parent().children();
-    $buttons.toggleClass('favorite-button unfavorite-button');
+    var $buttons = $button.parent();
+    var paletteID = $buttons.attr('data-palette-id');
+
+    if ($button.attr('class') === "favorite-button") {
+      this.createFavorite(paletteID);
+    } 
+    else {
+      this.removeFavorite(paletteID);
+    }
+    
+    $buttons.toggleClass('favorite unfavorite');
+  },
+  
+  createFavorite: function(paletteID) {
+    console.log("favorite!", paletteID);
+  },
+  
+  removeFavorite: function(paletteID) {
+    console.log("deleting a favorite!", paletteID);
   },
   
   render: function() {
