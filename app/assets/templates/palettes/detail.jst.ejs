@@ -10,9 +10,9 @@
 </div>
 
 <% if (palette.idOfFavoriters().indexOf(currentUserID) === -1) { %>
-  <div class="favorite" data-palette-id='<%= palette.get("id")%>'>
+  <div class="favorite">
 <% } else { %>
-  <div class="unfavorite" data-palette-id='<%= palette.get("id")%>'>
+  <div class="unfavorite">
 <% } %>
   <button class="favorite-button">Favorite</button>
   <button class="unfavorite-button">Unfavorite</button>
