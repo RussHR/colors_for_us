@@ -11,4 +11,14 @@ class FavoritesController < ApplicationController
       render :json => @favorite.errors.full_messages, :status => 422
     end
   end
+  
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    
+    if @favorite.destroy
+      render :json => @favorite
+    else
+      render :json => @favorite.errors.full_messages, :status => 422
+    end
+  end
 end

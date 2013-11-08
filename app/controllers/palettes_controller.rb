@@ -19,7 +19,7 @@ class PalettesController < ApplicationController
   end
   
   def show
-    @palette = Palette.find(params[:id])
-    render :json => @palette
+    @palette = Palette.includes(:favorites).find(params[:id])
+    render :json => @palette, :include => :favorites
   end
 end
