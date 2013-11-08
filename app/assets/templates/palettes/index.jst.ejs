@@ -15,8 +15,16 @@ Palettes:
         <% }) %>
       </div>
       </a>
-      <button class="favorite-button">Favorite</button>
-      <button class="unfavorite-button">Unfavorite</button>
+      
+      <% if (palette.idOfFavoriters().indexOf(currentUserID) === -1) { %>
+        <% console.log("you can favorite this!") %>
+      <% } else { %>
+        <% console.log("you can unfavorite this!") %>
+      <% } %>
+        <div>
+        <button class="favorite-button">Favorite</button>
+        <button class="unfavorite-button">Unfavorite</button>
+      </div>
     </li>
   <% }); %>
 </ul>

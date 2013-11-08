@@ -20,5 +20,15 @@ ColorsForUs.Models.Palette = Backbone.Model.extend({
     }
     
     return colorArray;
+  },
+  
+  idOfFavoriters: function() {
+    var favoriterIDs = [];
+    
+    this.get('favoriting_users').forEach(function(userObj) {
+      favoriterIDs.push(userObj.id);
+    });
+    
+    return favoriterIDs;
   }
 });

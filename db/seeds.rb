@@ -40,3 +40,7 @@ dylan.palettes.create!(name: "Good Friends", color_1: "#D9CEB2",
 dylan.palettes.create!(name: "LoversInJapan", color_1: "#E94E77",
                        color_2: "#D68189", color_3: "#C6A49A",
                        color_4: "#C6E5D9", color_5: "#F4EAD5")
+                       
+# Favorites
+
+ned.favorites.create!(palette_id: 1)
