@@ -17,9 +17,9 @@ Palettes:
       </a>
       
       <% if (palette.idOfFavoriters().indexOf(currentUserID) === -1) { %>
-        <div class="favorite">
+        <div class="favorite" data-palette-id='<%= palette.get("id")%>'>
       <% } else { %>
-        <div class="unfavorite">
+        <div class="unfavorite" data-palette-id='<%= palette.get("id")%>'>
       <% } %>
         <button class="favorite-button">Favorite</button>
         <button class="unfavorite-button">Unfavorite</button>
