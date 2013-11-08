@@ -25,8 +25,8 @@ ColorsForUs.Models.Palette = Backbone.Model.extend({
   idOfFavoriters: function() {
     var favoriterIDs = [];
     
-    this.get('favoriting_users').forEach(function(userObj) {
-      favoriterIDs.push(userObj.id);
+    this.get('favorites').forEach(function(favoriteObj) {
+      favoriterIDs.push(favoriteObj.giver_id);
     });
     
     return favoriterIDs;
