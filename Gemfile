@@ -19,6 +19,7 @@ end
 
 gem 'backbone-on-rails'
 gem 'devise'
+gem 'fabric-rails'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'omniauth'

@@ -61,8 +61,12 @@ ColorsForUs.Views.PalettesIndex = Backbone.View.extend({
   },
   
   render: function() {
-    var data = JSON.parse($("#bootstrapped_current_user_id").html());
-    this.currentUserID = data.current_user_id;
+    var possibleData = $("#bootstrapped_current_user_id").html();
+    
+    if (possibleData) {
+      var data = JSON.parse($("#bootstrapped_current_user_id").html());
+      this.currentUserID = data.current_user_id;
+    }
     
     var renderedContent = this.template({
       palettes: this.collection,

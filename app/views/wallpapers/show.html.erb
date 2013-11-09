@@ -1,1 +1,23 @@
-woah I am a wallpaper(?)
+<canvas width="<%= params[:width]%>"
+        height="<%= params[:height]%>"
+        id="the-canvas">
+</canvas>
+
+<script type="text/javascript">
+  var canvas = new fabric.Canvas('the-canvas');
+  
+  <% left_pos = @each_width / 2 %>
+  <% @palette.real_colors.each do |color| %>
+    var rect = new fabric.Rect({
+      left: <%= left_pos %>,
+      top: <%= params[:height].to_f / 2%>,
+      fill: '<%= color %>',
+      width: <%= @each_width %>,
+      height: <%= params[:height] %>
+    });
+  
+  canvas.add(rect);
+  
+  <% left_pos += @each_width %>
+  <% end %>
+</script>
