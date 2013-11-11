@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  font-family: Garamond;
+// This is for Google's Grand Hotel font
+@import url(http://fonts.googleapis.com/css?family=Grand+Hotel);
+
+@mixin grand-hotel-font($size: 2em) {
+  font-family: 'Grand Hotel', cursive;
+  font-size: $size;
 }
 
 #content, .notice, .alert {
@@ -16,9 +20,10 @@ body {
 }
 
 header {
+  @include grand-hotel-font;
   background-color: yellow;
   width: 100%;
-  height: 3em;
+  height: 2em;
   position: fixed;
   left: 0;
   top: 0;
