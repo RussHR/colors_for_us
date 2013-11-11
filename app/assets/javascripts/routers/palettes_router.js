@@ -38,12 +38,17 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
   },
   
   _swapView: function(newView) {
-    if (this._prevView) {
-      this._prevView.remove();
-    }
+    var that = this;
     
-    this._prevView = newView;
-    newView.render();
-    $("#content").html(newView.$el);
+    $("#content").fadeOut(500, function() {
+      if (this._prevView) {
+        this._prevView.remove();
+      }
+      
+      that._prevView = newView;
+      newView.render();
+      $("#content").html(newView.$el);
+      $("#content").fadeIn(500);
+    });
   }
 });
