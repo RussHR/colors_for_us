@@ -10,8 +10,14 @@
   </a>
   
   <%= link_to destroy_user_session_path, :method => :delete  do %>
-    <div class="nav-item">Sign Out</div>
+    <div class="nav-item last-nav-item">Sign Out</div>
   <% end %>
+  
+  <div class="nav-item">Browse</div>
+  
+  <a href="#/new">
+    <div class="nav-item">Create</div>
+  </a>
   
   <a href="#">
     <div class="nav-item">

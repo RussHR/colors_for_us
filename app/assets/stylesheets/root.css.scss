@@ -74,6 +74,10 @@ header {
   @include nav-item;
   padding: 0.6em 0.5em 0 0.5em;
   float:right;
+  
+  &.last-nav-item {
+    padding-right: 1em;
+  }
 }
 
 #nav-logo {
