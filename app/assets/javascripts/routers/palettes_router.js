@@ -48,6 +48,7 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
       that._prevView = newView;
       newView.render();
       $("#content").html(newView.$el);
+      window.scrollTo(0, 0);
       $("#content").fadeIn(500);
     });
   }
