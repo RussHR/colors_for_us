@@ -72,12 +72,19 @@ header {
 .nav-item {
   @include grand-hotel-font(1.5em);
   @include nav-item;
-  padding: 0.6em 0.5em 0 0.5em;
+  padding: 0.6em 0.55em 0 0.5em;
   float:right;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
   
   &.last-nav-item {
     padding-right: 1em;
   }
+  
+  transition: 0.5s 0s all ease;
+  &:hover {
+    background-color: #373737;
+  };
 }
 
 #nav-logo {
@@ -89,4 +96,3 @@ header {
  width: 6em;
  padding-top: 0.35em;
 }
-
