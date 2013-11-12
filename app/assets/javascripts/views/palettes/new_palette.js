@@ -10,6 +10,11 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
     var $currentSwatch = $(event.target);
     $currentSwatch.addClass('active-swatch');
     $currentSwatch.siblings().removeClass('active-swatch');
+    
+    var notifierNum = $currentSwatch.attr('data-color-id');
+    var $notifier = $('div[notifier-id=' + notifierNum + ']');
+    $notifier.addClass('active-notifier');
+    $notifier.siblings().removeClass('active-notifier');
   },
   
   createPalette: function() {

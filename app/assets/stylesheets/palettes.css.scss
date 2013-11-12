@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$palette-width: 80%;
+
+.active-notifier {
+  background-color: #b8b8b8;
+}
+
 .detail-palette {
   height: 10em;
   width: 90%;
@@ -16,7 +22,7 @@
 }
 
 #future-palette {
-  width: 80%;
+  width: $palette-width;
   height: 7em;
   margin: 0 auto;
 }
@@ -34,4 +40,18 @@
 .no-color:after {
   content: "(no color)";
   color: #5c5c5c;
+}
+
+.notifier {
+  float: left;
+  height: 100%;
+  width: 20%;
+  border-radius: 1em;
+  transition: 0.5s 0s all ease;
+}
+
+#swatch-notifier {
+  height: 0.5em;
+  width: $palette-width;
+  margin: 0 auto 0.5em auto;
 }
