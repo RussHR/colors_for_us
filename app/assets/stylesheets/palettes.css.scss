@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.detail-palette {
+  height: 10em;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .future-color {
   background-color: #ecf0f1;
-  border-radius: 10%;
   width: 20%;
   height: 100%;
   float: left;
@@ -26,8 +31,7 @@
   height: 100%;
 }
 
-.detail-palette {
-  height: 10em;
-  width: 90%;
-  margin: 0 auto;
+.no-color:after {
+  content: "(no color)";
+  color: #5c5c5c;
 }

@@ -56,6 +56,7 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
       flat: true,
       
       onChange: function(hsb, hex, rgb) {
+        $('.active-swatch').removeClass('no-color');
         $('.active-swatch').css('background-color', '#' + hex);
         $('.active-swatch').attr('data-color', '#' + hex);
       },

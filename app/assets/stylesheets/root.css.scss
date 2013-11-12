@@ -79,6 +79,10 @@ header {
   z-index: 9999999;
 }
 
+.lesser-title {
+  @include grand-hotel-font(1.75em);
+}
+
 .nav-item {
   @include grand-hotel-font(1.5em);
   @include nav-item;
