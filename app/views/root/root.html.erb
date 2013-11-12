@@ -13,6 +13,8 @@
     <div class="nav-item last-nav-item">Sign Out</div>
   <% end %>
   
+  <div class="nav-item">My Account</div>
+  
   <div class="nav-item">Browse</div>
   
   <a href="#/new">
@@ -20,11 +22,15 @@
   </a>
   
   <a href="#">
-    <div class="nav-item">
+    <div class="nav-item active-tab">
       Home
     </div>
   </a>
   
 </header>
 
-<div id="content"></div>
+
+<div id="content">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>

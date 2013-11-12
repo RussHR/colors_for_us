@@ -23,6 +23,10 @@ $navbar-gradient: to bottom, #4b4b4b, #000000;
 //  }
 //}
 
+@mixin active-tab {
+  background-color: #373737;
+}
+
 @mixin ensure-border-box {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -46,8 +50,14 @@ $navbar-gradient: to bottom, #4b4b4b, #000000;
   color: white;
 }
 
+.active-tab {
+  @include active-tab;
+}
+
 body {
   background-color: $bg-color;
+  @include normal-font;
+  @include boring-links;
 }
 
 #content, .notice, .alert {
@@ -83,7 +93,7 @@ header {
   
   transition: 0.5s 0s all ease;
   &:hover {
-    background-color: #373737;
+    @include active-tab
   };
 }
 

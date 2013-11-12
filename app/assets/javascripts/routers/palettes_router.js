@@ -6,6 +6,14 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
    ":id": "showPaletteDetail"
   },
   
+  initialize: function() {    
+    $(".nav-item").on("click", function(event) {
+      var $tab = $(event.target);
+      $(".nav-item").removeClass("active-tab");
+      $tab.addClass("active-tab");
+    })
+  },
+  
   showPaletteIndex: function() {
     var that = this;
     var paletteCollection = new ColorsForUs.Collections.Palettes();
