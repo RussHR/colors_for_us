@@ -1,0 +1,149 @@
+.color-cycler {
+  animation-duration: 60s;
+  animation-name: color-cycle;
+  animation-iteration-count: infinite;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-name: color-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-duration: 60s;
+  -moz-animation-name: color-cycle;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes color-cycle {
+  from {
+    color: rgba(255, 130, 130, 1);
+  }
+
+  to {
+    color: rgba(255, 130, 130, 1);
+  }
+  
+  10% {
+    color: rgba(255, 174, 130, 1);
+  }
+  
+  20% {
+    color: rgba(255, 230, 130, 1);
+  }
+  
+  30% {
+    color: rgba(186, 255, 130, 1);
+  }
+  
+  40% {
+    color: rgba(130, 255, 155, 1);
+  }
+  
+  50% {
+    color: rgba(130, 255, 255, 1);
+  }
+  
+  60% {
+    color: rgba(130, 180, 255, 1);
+  }
+  
+  70% {
+    color: rgba(159, 130, 255, 1);
+  }
+  
+  80% {
+    color: rgba(224, 130, 255, 1);
+  }
+  
+  90% {
+    color: rgba(255, 130, 201, 1);
+  }
+}
+
+@-webkit-keyframes color-cycle {
+  from {
+    color: rgba(255, 130, 130, 1);
+  }
+
+  to {
+    color: rgba(255, 130, 130, 1);
+  }
+  
+  10% {
+    color: rgba(255, 174, 130, 1);
+  }
+  
+  20% {
+    color: rgba(255, 230, 130, 1);
+  }
+  
+  30% {
+    color: rgba(186, 255, 130, 1);
+  }
+  
+  40% {
+    color: rgba(130, 255, 155, 1);
+  }
+  
+  50% {
+    color: rgba(130, 255, 255, 1);
+  }
+  
+  60% {
+    color: rgba(130, 180, 255, 1);
+  }
+  
+  70% {
+    color: rgba(159, 130, 255, 1);
+  }
+  
+  80% {
+    color: rgba(224, 130, 255, 1);
+  }
+  
+  90% {
+    color: rgba(255, 130, 201, 1);
+  }
+}
+
+@-moz-keyframes color-cycle {
+  from {
+    color: rgba(255, 130, 130, 1);
+  }
+
+  to {
+    color: rgba(255, 130, 130, 1);
+  }
+  
+  10% {
+    color: rgba(255, 174, 130, 1);
+  }
+  
+  20% {
+    color: rgba(255, 230, 130, 1);
+  }
+  
+  30% {
+    color: rgba(186, 255, 130, 1);
+  }
+  
+  40% {
+    color: rgba(130, 255, 155, 1);
+  }
+  
+  50% {
+    color: rgba(130, 255, 255, 1);
+  }
+  
+  60% {
+    color: rgba(130, 180, 255, 1);
+  }
+  
+  70% {
+    color: rgba(159, 130, 255, 1);
+  }
+  
+  80% {
+    color: rgba(224, 130, 255, 1);
+  }
+  
+  90% {
+    color: rgba(255, 130, 201, 1);
+  }
+}

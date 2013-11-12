@@ -106,3 +106,7 @@ header {
  width: 6em;
  padding-top: 0.35em;
 }
+
+.title {
+  @include grand-hotel-font(3em);
+}
