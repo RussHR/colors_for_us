@@ -3,7 +3,8 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
   
   events: {
     "click .future-color": "setActiveColor",
-    "click #create-palette": "createPalette"
+    "click #create-palette": "createPalette",
+    "click .clear-color": "clearColor"
   },
   
   setActiveColor: function(event) {
@@ -54,6 +55,13 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
     return realColors;
   },
   
+  clearColor: function(event) {
+    $swatch = $(event.currentTarget).parent();
+    $swatch.addClass('no-color');
+    $swatch.css('background-color', '#ecf0f1');
+    $swatch.attr('data-color', '');
+  },
+  
   render: function() {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
@@ -66,6 +74,16 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
         $('.active-swatch').attr('data-color', '#' + hex);
       },
     });
+    
+    this.$el.find('.future-color').on('mouseenter', function(event) {
+      var $swatch = $(event.currentTarget);
+      $swatch.append("<div class='clear-color'>X</div>");
+    })
+    
+    this.$el.find('.future-color').on('mouseleave', function(event) {
+      $('.clear-color').remove();
+    })
+    
     return this;
   }   
 });

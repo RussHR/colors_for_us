@@ -8,6 +8,25 @@ $palette-width: 80%;
   background-color: #b8b8b8;
 }
 
+.clear-color {
+  float: right;
+  background-color: #545454;
+  height: 1.5em;
+  width: 1.5em;
+  margin: 0.1em 0.1em 0 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
+  text-align: center;
+  padding-top: 0.2em;
+  opacity: 0.3;
+  border-radius: 50%;
+  
+  &:hover {
+   opacity: 1; 
+  }
+}
 // .create-button is in root.css.scss
 
 .detail-palette {
@@ -37,6 +56,13 @@ $palette-width: 80%;
 .index-palette-swatch {
   float: left;
   height: 100%;
+}
+
+.no-color {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px dashed #d6d6d6;
 }
 
 .no-color:after {

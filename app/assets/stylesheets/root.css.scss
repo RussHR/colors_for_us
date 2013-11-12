@@ -98,7 +98,7 @@ header {
 }
 
 .lesser-title {
-  @include grand-hotel-font(1.85em);
+  @include grand-hotel-font;
 }
 
 .nav-item {
