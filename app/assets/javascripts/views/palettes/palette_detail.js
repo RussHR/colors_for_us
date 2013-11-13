@@ -16,7 +16,10 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
       this.removeFavorite();
     }
     
-    $buttons.toggleClass('favorite unfavorite');
+    $buttons.fadeOut(600, function() {
+      $buttons.toggleClass('favorite unfavorite');
+      $buttons.fadeIn(600);
+    });
   },
   
   createFavorite: function() {
