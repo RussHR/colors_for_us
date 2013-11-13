@@ -61,6 +61,11 @@ body {
 }
 
 button {
+  @include normal-font;
+  background-color: gray;
+  border: 0px;
+  border-radius: 0.7em;
+  
   transition: 0.5s 0s all ease;
   
   &:hover {
@@ -76,12 +81,12 @@ button {
 }
 
 .create-button {
-  @include normal-font;
-  background-color: gray;
-  border-radius: 0.7em;
   font-size: 1em;
-  border: 0px;
   padding: 1.75em;
+}
+
+.favorite-button, .unfavorite-button {
+  width: 8em;
 }
 
 header {
