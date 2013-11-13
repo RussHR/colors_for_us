@@ -1,7 +1,6 @@
 <h1 class="title">Recent Palettes:</h1>
 
 <% palettes.forEach(function(palette) { %>
-<% console.log(palette) %>
   <div class="palette-in-group">
   <a href="#/<%= palette.get('id')%>">
     <%= palette.get('name') %> by <%= palette.get('creator').username %>

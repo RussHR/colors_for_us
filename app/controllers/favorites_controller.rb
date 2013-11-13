@@ -13,7 +13,8 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.find_by_palette_id_and_giver_id(
+                          params[:palette_id], current_user.id)
     
     if @favorite.destroy
       render :json => @favorite

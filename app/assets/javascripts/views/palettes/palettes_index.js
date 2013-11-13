@@ -37,31 +37,16 @@ ColorsForUs.Views.PalettesIndex = Backbone.View.extend({
   },
   
   removeFavorite: function(paletteID) {
-    var that = this;
-    var palette = new ColorsForUs.Models.Palette({
-      id: paletteID
-    });
-    
-    palette.fetch({
+    $.ajax({
+      url: "/favorites",
+      type: "DELETE",
+      data: {
+        palette_id: paletteID
+      },
       success: function() {
-        palette.get('favorites').forEach(function(favorite) {
-          if (favorite.giver_id === that.currentUserID &&
-              favorite.palette_id === parseInt(paletteID)) {
-                that.deleteFavoriteByID(favorite.id);
-            }
-        });
+        console.log("deleted!");
       }
-    });
-  },
-  
-  deleteFavoriteByID: function(favoriteID) {
-    var favorite = new ColorsForUs.Models.Favorite({ id: favoriteID });
-    
-    favorite.destroy({
-      success: function() {
-        console.log("destroyed!");
-      }
-    });
+    })
   },
   
   render: function() {

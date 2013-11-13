@@ -7,6 +7,9 @@ ColorsForUs::Application.routes.draw do
   resources :palettes, :only => [:index, :create, :show] do
     resource :wallpaper, :only => [:show]
   end
-  resources :favorites, :only => [:create, :destroy]
+  
+  resources :favorites, :only => [:create]
+  delete '/favorites' => "favorites#destroy"
+  
   root to: "Root#root"
 end
