@@ -50,7 +50,8 @@ $palette-width: 80%;
 
 .index-palette {
   height: 5em;
-  width: 20em;
+  width: 100%;
+  margin: 0.5em 0;
 }
 
 .index-palette-swatch {
@@ -76,6 +77,11 @@ $palette-width: 80%;
   width: 20%;
   border-radius: 1em;
   transition: 0.3s 0s all ease;
+}
+
+.palette-in-group {
+  width: 75%;
+  margin: 0 5em 1em 6em;
 }
 
 #swatch-notifier {
