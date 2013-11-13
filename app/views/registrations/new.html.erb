@@ -5,6 +5,9 @@
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
+  
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username %></div>
 
 <% if @user.password_required? %>
   <div><%= f.label :password %><br />

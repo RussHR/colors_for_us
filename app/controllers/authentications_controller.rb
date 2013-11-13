@@ -22,6 +22,7 @@ class AuthenticationsController < ApplicationController
       redirect_to authentications_url
     else
       user = User.new
+      user.username = omniauth["extra"]["raw_info"]["username"]
       user.apply_omniauth(omniauth)
       if user.save
         sign_in_and_redirect(:user, user)

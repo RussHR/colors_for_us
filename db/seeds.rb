@@ -1,11 +1,15 @@
 # Users
 
-ned = User.create!(email: "ned@example.com", password: "ilovecats")
-kush = User.create!(email: "kush@example.com", password: "ilovecats")
-flarnie = User.create!(email: "flarnie@example.com", password: "ilovecats")
-asher = User.create!(email: "asher@example.com", password: "ilovecats")
-cj = User.create!(email: "cj@example.com", password: "ilovecats")
-dylan = User.create!(email: "dylan@example.com", password: "ilovecats")
+ned = User.create!(email: "ned@example.com", password: "ilovecats",
+                    username: "ned")
+kush = User.create!(email: "kush@example.com", password: "ilovecats",
+                    username: "kush")
+flarnie = User.create!(email: "flarnie@example.com", password: "ilovecats",
+                        username: "flarnie")
+asher = User.create!(email: "asher@example.com", password: "ilovecats",                               username: "asher")
+cj = User.create!(email: "cj@example.com", password: "ilovecats", 
+                  username: "cj")
+dylan = User.create!(email: "dylan@example.com", password: "ilovecats",                               username: "dylan")
 
 # Palettes
 
