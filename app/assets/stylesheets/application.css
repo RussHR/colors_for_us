@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require colorpicker.css.scss
+ *= require jquery.modal.css
  *= require_tree .
  */

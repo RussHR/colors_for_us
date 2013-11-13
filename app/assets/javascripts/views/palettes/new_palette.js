@@ -39,6 +39,11 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
         }
       });
     }
+    else {
+      $("#no-name-or-color").modal({
+        fadeDuration: 250
+      });
+    }
   },
   
   colorsFromPalette: function() {
