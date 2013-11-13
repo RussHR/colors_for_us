@@ -23,6 +23,9 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
     var realColors = this.colorsFromPalette();
 
     if (paletteName != "" && realColors.length > 0) {
+      var $createButton = $("#create-palette");
+      $createButton.html('Creating palette...');
+      
       var palette = new ColorsForUs.Models.Palette({
         name: paletteName,
         color_1: realColors[0],
@@ -41,7 +44,7 @@ ColorsForUs.Views.NewPalette = Backbone.View.extend({
     }
     else {
       $("#no-name-or-color").modal({
-        fadeDuration: 250
+        fadeDuration: 200
       });
     }
   },
