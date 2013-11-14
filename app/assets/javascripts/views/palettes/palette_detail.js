@@ -60,7 +60,7 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
     event.preventDefault();
     var height = $("#wallpaper-height").val();
     var width = $("#wallpaper-width").val();
-    var url = "http://colorsfor.us/palettes/" + this.model.get('id') +                        "/wallpaper?width=" + width + "&height=" + height;
+    var url = "/palettes/" + this.model.get('id') +                        "/wallpaper?width=" + width + "&height=" + height;
     console.log(url);
     
     window.open(url);
