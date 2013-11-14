@@ -2,7 +2,8 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
   template: JST['palettes/detail'],
   
   events: {
-    "click button": "toggleFavorite"
+    "click .favorite-button": "toggleFavorite",
+    "click .unfavorite-button": "toggleFavorite"
   },
   
   toggleFavorite: function(event) {
@@ -35,28 +36,16 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
   },
   
   removeFavorite: function() {
-    var that = this;
-    
-    this.model.fetch({
+    $.ajax({
+      url: "/favorites",
+      type: "DELETE",
+      data: {
+        palette_id: this.model.get('id')
+      },
       success: function() {
-        that.model.get('favorites').forEach(function(favorite) {
-          if (favorite.giver_id === that.currentUserID &&
-              favorite.palette_id === parseInt(that.model.get('id'))) {
-                that.deleteFavoriteByID(favorite.id);
-            }
-        });
+        console.log("deleted!");
       }
-    });
-  },
-  
-  deleteFavoriteByID: function(favoriteID) {
-    var favorite = new ColorsForUs.Models.Favorite({ id: favoriteID });
-    
-    favorite.destroy({
-      success: function() {
-        console.log("destroyed!");
-      }
-    });
+    })
   },
   
   render: function() {
