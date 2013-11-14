@@ -2,10 +2,46 @@
   <h1 class="title"><%= user.get('username') %></h1>
 </center>
 
+
 <div class="left-palettes">
   <h3 class="lesser-title">Palettes:</h3>
+  
+  <% user.get('palettes').forEach(function(paletteObj) { %>
+    <% var palette = new ColorsForUs.Models.Palette(paletteObj) %>
+    <div class="palette-in-group">
+    <a href="#/<%= palette.get('id')%>">
+      <%= palette.get('name') %>
+      <div class="index-palette">
+        <% palette.colors().forEach(function(color){ %>
+          <div class="index-palette-swatch" 
+            style="background-color: <%= color %>; 
+            width: <%= palette.divPercentWidth() %>%">
+          </div>
+        <% }) %>
+      </div>
+      </a>
+    </div>
+  <% }); %>
+  
 </div>
 
 <div class="right-palettes">
 <h3 class='lesser-title'>Favorite Palettes:</h3>
+
+  <% user.get('favorite_palettes').forEach(function(paletteObj) { %>
+    <% var palette = new ColorsForUs.Models.Palette(paletteObj) %>
+    <div class="palette-in-group">
+    <a href="#/<%= palette.get('id')%>">
+      <%= palette.get('name') %>
+      <div class="index-palette">
+        <% palette.colors().forEach(function(color){ %>
+          <div class="index-palette-swatch" 
+            style="background-color: <%= color %>; 
+            width: <%= palette.divPercentWidth() %>%">
+          </div>
+        <% }) %>
+      </div>
+      </a>
+    </div>
+  <% }); %>
 </div>
