@@ -11,5 +11,6 @@ ColorsForUs::Application.routes.draw do
   resources :favorites, :only => [:create]
   delete '/favorites' => "favorites#destroy"
   
+  resources :users, :only => [:show]
   root to: "Root#root"
 end

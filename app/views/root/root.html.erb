@@ -13,9 +13,11 @@
     <div class="nav-item last-nav-item">Sign Out</div>
   <% end %>
   
-  <div class="nav-item">My Account</div>
+  <a href="#/users/<%= current_user.id %>">
+    <div class="nav-item">My Account</div>
+  </a>
   
-  <div class="nav-item">Browse</div>
+  <!-- <div class="nav-item">Browse</div> -->
   
   <a href="#/new">
     <div class="nav-item">Create</div>

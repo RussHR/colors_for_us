@@ -3,7 +3,8 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
    "_=_": "showPaletteIndex",
    "": "showPaletteIndex",
    "new": "showNewPalette",
-   ":id": "showPaletteDetail"
+   ":id": "showPaletteDetail",
+   "users/:id": "showUserDetail"
   },
   
   initialize: function() {    
@@ -45,9 +46,24 @@ ColorsForUs.Routers.Palettes = Backbone.Router.extend({
     });
   },
   
+  showUserDetail: function(id) {
+    var that = this;
+    var user = new ColorsForUs.Models.User({ id: id })
+    
+    user.fetch({
+      success: function() {
+        var detailView = new ColorsForUs.Views.UserDetail({
+          model: user
+        });
+        that._swapView(detailView);
+      }
+    });
+  },
+  
   _swapView: function(newView) {
     var that = this;
     
+    $.modal.close();
     $("#content").fadeOut(500, function() {
       if (this._prevView) {
         this._prevView.remove();
