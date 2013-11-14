@@ -3,7 +3,8 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
   
   events: {
     "click .favorite-button": "toggleFavorite",
-    "click .unfavorite-button": "toggleFavorite"
+    "click .unfavorite-button": "toggleFavorite",
+    "click .create-wallpapers": "openWallpapersModal"
   },
   
   toggleFavorite: function(event) {
@@ -46,6 +47,12 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
         console.log("deleted!");
       }
     })
+  },
+  
+  openWallpapersModal: function() {
+    $("#wallpaper-modal").modal({
+      fadeDuration: 200
+    });
   },
   
   render: function() {
