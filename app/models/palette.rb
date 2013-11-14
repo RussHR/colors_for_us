@@ -11,7 +11,7 @@ class Palette < ActiveRecord::Base
     :foreign_key => :creator_id
   )
   
-  has_many :favorites
+  has_many :favorites, :dependent => :destroy
   
   has_many :favoriting_users, :through => :favorites, :source => :giver
   

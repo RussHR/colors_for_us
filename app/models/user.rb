@@ -17,13 +17,15 @@ class User < ActiveRecord::Base
     :palettes,
     :class_name => "Palette",
     :primary_key => :id,
-    :foreign_key => :creator_id
+    :foreign_key => :creator_id,
+    :dependent => :destroy
   )
   has_many(
     :favorites,
     :class_name => "Favorite",
     :primary_key => :id,
-    :foreign_key => :giver_id
+    :foreign_key => :giver_id,
+    :dependent => :destroy
   )
   
   has_many :favorite_palettes, :through => :favorites, :source => :palette

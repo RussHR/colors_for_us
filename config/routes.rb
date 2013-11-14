@@ -12,5 +12,7 @@ ColorsForUs::Application.routes.draw do
   delete '/favorites' => "favorites#destroy"
   
   resources :users, :only => [:show]
+  get '/guest_login' => "users#guest_login"
+  
   root to: "Root#root"
 end
