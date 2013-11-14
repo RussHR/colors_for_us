@@ -21,7 +21,6 @@ doc/
 *.project
 .DS_Store
 .idea
-/db/seeds.rb
 
 # Ignore application configuration
 /config/application.yml
