@@ -4,7 +4,8 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
   events: {
     "click .favorite-button": "toggleFavorite",
     "click .unfavorite-button": "toggleFavorite",
-    "click .create-wallpapers": "openWallpapersModal"
+    "click .create-wallpapers": "openWallpapersModal",
+    "click #generate-wallpaper": "generateWallpaper"
   },
   
   toggleFavorite: function(event) {
@@ -53,6 +54,15 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
     $("#wallpaper-modal").modal({
       fadeDuration: 200
     });
+  },
+  
+  generateWallpaper: function(event) {
+    event.preventDefault();
+    var height = $("#wallpaper-height").val();
+    var width = $("#wallpaper-width").val();
+    var url = "http://colorsfor.us/palettes/" + this.model.get('id') +                        "/wallpaper?height=" + height + "&width=" + width;
+    
+    window.open(url);
   },
   
   render: function() {

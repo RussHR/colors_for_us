@@ -22,4 +22,19 @@ by <%= palette.get('creator').username %>
 <button class="create-button create-wallpapers">Create Wallpapers</button>
 </center>
 
-<div id="wallpaper-modal" class="modal">yeahhhh</div>
+<div id="wallpaper-modal" class="modal">
+  <h3 class="modal-title">Create Wallpaper:</h3>
+  
+  <form>
+    <label for="wallpaper-width">Width:</label>
+    <input type="number" placeholder="width (pixels)" id="wallpaper-width">
+    
+    <label for="wallpaper-height">Height:</label>
+    <input type="number" placeholder="height (pixels)" id="wallpaper-height">
+    <br><br>
+    
+    <input type="submit" class="submit-button" value="Generate"
+    id="generate-wallpaper">
+  </form>
+  <p>If your wallpaper isn't generated, please turn your ad-blockers off.</p>
+</div>

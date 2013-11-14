@@ -124,6 +124,11 @@ header {
   };
 }
 
+.modal-title {
+  @extend .lesser-title;
+  color: black;
+}
+
 #nav-logo {
  @include grand-hotel-font;
  @include nav-item;
@@ -132,6 +137,16 @@ header {
  float: left;
  width: 6em;
  padding-top: 0.35em;
+}
+
+.submit-button {
+  @extend button;
+  @extend .create-button;
+  
+  &:hover {
+    background-color: black;
+    color: white;
+  };
 }
 
 .title {
