@@ -6,6 +6,7 @@
     <%= palette.get('name') %></a> by 
     <a href="#/users/<%= palette.get('creator_id') %>">
     <%= palette.get('creator').username %></a>
+    <a href="#/<%= palette.get('id')%>">
     <div class="index-palette">
       <% palette.colors().forEach(function(color){ %>
         <div class="index-palette-swatch" 

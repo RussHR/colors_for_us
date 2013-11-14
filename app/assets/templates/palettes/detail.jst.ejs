@@ -1,5 +1,6 @@
 <center><h1 class="lesser-title"><%= palette.get('name') %></h1>
-by <%= palette.get('creator').username %>
+by <a href="/#/users/<%= palette.get('creator').id %>">
+<%= palette.get('creator').username %></a>
 
 <div class="detail-palette">
   <% palette.colors().forEach(function(color){ %>
