@@ -1,12 +1,12 @@
 # Users
 
-ned = User.create!(email: "ned@example.com", password: ENV['MOCK_USER_PASSWORD'], username: "ned")
-kush = User.create!(email: "kush@example.com", password: ENV['MOCK_USER_PASSWORD'], username: "kush")
-flarnie = User.create!(email: "flarnie@example.com", password: ENV['MOCK_USER_PASSWORD'], username: "flarnie")
-asher = User.create!(email: "asher@example.com", password: ENV['MOCK_USER_PASSWORD'], username: "asher")
-cj = User.create!(email: "cj@example.com", password: ENV['MOCK_USER_PASSWORD'], 
+ned = User.create!(email: "ned@example.com", password: "ireallylovecats", username: "ned")
+kush = User.create!(email: "kush@example.com", password: "ireallylovecats", username: "kush")
+flarnie = User.create!(email: "flarnie@example.com", password: "ireallylovecats", username: "flarnie")
+asher = User.create!(email: "asher@example.com", password: "ireallylovecats", username: "asher")
+cj = User.create!(email: "cj@example.com", password: "ireallylovecats", 
 username: "cj")
-dylan = User.create!(email: "dylan@example.com", password: ENV['MOCK_USER_PASSWORD'], username: "dylan")
+dylan = User.create!(email: "dylan@example.com", password: "ireallylovecats", username: "dylan")
 
 # Palettes
 
