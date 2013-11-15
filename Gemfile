@@ -18,6 +18,7 @@ group :development do
 end
 
 gem 'backbone-on-rails'
+gem 'delayed_job_active_record'
 gem 'devise'
 gem 'fabric-rails'
 gem 'figaro'

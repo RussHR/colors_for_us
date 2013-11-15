@@ -11,5 +11,7 @@ class UsersController < ApplicationController
   def guest_login
     user = current_or_guest_user
     sign_in_and_redirect(:user, user)
+    
+    user.delete_guest
   end
 end

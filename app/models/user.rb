@@ -39,6 +39,11 @@ class User < ActiveRecord::Base
     (authentications.empty? || !password.blank?) && super
   end
   
+  def delete_guest
+    self.destroy
+  end
+  handle_asynchronously :delete_guest, run_at: Proc.new { 1.hour.from_now }
+  
   private
   
   def send_welcome_email
