@@ -102,6 +102,11 @@ header {
   z-index: 9999999;
 }
 
+#left-session-column {
+  float: left;
+  width: 50%;
+}
+
 .lesser-title {
   @include grand-hotel-font;
 }
@@ -137,6 +142,10 @@ header {
  float: left;
  width: 6em;
  padding-top: 0.35em;
+}
+
+#right-session-column {
+  @extend #left-session-column;
 }
 
 .submit-button {
