@@ -148,6 +148,11 @@ header {
   @extend #left-session-column;
 }
 
+.sign-in-button {
+  @extend button;
+  font-size: 1em;
+}
+
 .submit-button {
   @extend button;
   @extend .create-button;
