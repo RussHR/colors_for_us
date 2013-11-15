@@ -48,4 +48,11 @@ when "development"
   # Favorites
 
   ned.favorites.create!(palette_id: 1)
+  
+  #guest
+  
+  guest = User.new(email: "guest@example.com", username: "guest")
+  guest.save!(validate: false)
 end
+
+
