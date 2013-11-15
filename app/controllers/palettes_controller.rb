@@ -3,7 +3,9 @@ class PalettesController < ApplicationController
   respond_to :json
   
   def index
-    @palettes = Palette.includes(:favorites, :creator).all.reverse
+    @palettes = Palette.includes(:favorites, :creator).all(
+      :limit => 15, :order => 'created_at DESC'
+    )
     render :json => @palettes, :include => [:favorites, :creator]
   end
   
