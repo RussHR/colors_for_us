@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "User" do
-  it "should require a valid email" do
+  it "validates presence and format of email" do
     expect(User.new(
             password: "ireallylovecats", 
             username: "ned")).not_to be_valid
@@ -12,20 +12,23 @@ describe "User" do
             password: "ireallylovecats")).not_to be_valid
   end
   
-  it "should require a username" do
+  it "validates presence of username" do
     expect(User.new(
             email: "totally_valid_email@example.com",
-            password: "ireallylovecats")).not_to be_valid
+            password: "ireallylovecats"
+           )).to have_at_least(1).error_on(:username)
   end
-  
-  it "requires a password of length 6" do
+    
+  it "validates password presence and length (min. 8 chars)" do
     expect(User.new(
             email: "totally_valid_email@example.com",
             username: "ned")).not_to be_valid
            
-    expect(User.new(
-            email: "totally_valid_email@example.com",
-            username: "ned",
-            password: "ilu")).not_to be_valid
+    short_pass_user = User.new(
+                        email: "totally_valid_email@example.com",
+                        username: "ned",
+                        password: "ilu")
+    expect(short_pass_user.errors_on(:password)).to include(
+      "is too short (minimum is 8 characters)")
   end
 end
