@@ -16,3 +16,4 @@ Backbone.js on the front-end, Ruby on Rails at the back, and a good helping of J
 -register previous color upon click for palette creation  
 -remove center tags  
 -Gravatars  
+-pagination
