@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe User do
+  before do
+    @user = FactoryGirl.create(:user)
+  end
 
   describe "email" do
     it "validates presence of email" do
@@ -9,6 +12,10 @@ describe User do
   
     it "validates format of email" do
       expect(FactoryGirl.build(:user, email: "notvalid")).not_to be_valid
+    end
+    
+    it "validates uniqueness of email" do
+      expect(FactoryGirl.build(:user, email: @user.email)).not_to be_valid
     end
   end
      

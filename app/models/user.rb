@@ -40,8 +40,6 @@ class User < ActiveRecord::Base
   private
   
   def send_welcome_email
-    puts "Calling send_welcome_email"
-    msg = UserMailer.welcome_email(self)
-    msg.deliver!
+    msg = UserMailer.welcome_email(self) unless Rails.env == "test"
   end
 end
