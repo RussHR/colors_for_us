@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "User" do
+describe User do
   it "validates presence and format of email" do
     expect(User.new(
             password: "ireallylovecats", 
@@ -11,7 +11,7 @@ describe "User" do
             username: "ned",
             password: "ireallylovecats")).not_to be_valid
   end
-  
+    
   it "validates presence of username" do
     expect(User.new(
             email: "totally_valid_email@example.com",
@@ -31,4 +31,9 @@ describe "User" do
     expect(short_pass_user.errors_on(:password)).to include(
       "is too short (minimum is 8 characters)")
   end
+  
+  it { should have_many(:palettes) }
+  it { should have_many(:authentications) }
+  it { should have_many(:favorites) }
+  it { should have_many(:favorite_palettes) }
 end
