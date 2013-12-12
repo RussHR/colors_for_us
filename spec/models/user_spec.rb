@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  it "validates presence and format of email" do
-    expect(User.new(
-            password: "ireallylovecats", 
-            username: "ned")).not_to be_valid
-    
+  it "validates presence of email" do
+    expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
+  end
+  
+  it "validates format of email" do
     expect(User.new(
             email: "fake",
             username: "ned",
@@ -19,11 +19,13 @@ describe User do
            )).to have_at_least(1).error_on(:username)
   end
     
-  it "validates password presence and length (min. 8 chars)" do
+  it "validates password presence" do
     expect(User.new(
             email: "totally_valid_email@example.com",
             username: "ned")).not_to be_valid
-           
+  end
+     
+  it "validates password length (min. 8 chars)" do
     short_pass_user = User.new(
                         email: "totally_valid_email@example.com",
                         username: "ned",
