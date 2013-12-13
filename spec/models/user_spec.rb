@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  before do
+  before(:each) do
     @user = FactoryGirl.create(:user)
   end
 
@@ -23,6 +23,10 @@ describe User do
     it "validates presence of username" do
       expect(FactoryGirl.build(:user, username: nil
         )).to have_at_least(1).error_on(:username)
+    end
+    
+    it "validates uniqueness of username" do
+      expect(FactoryGirl.build(:user, username: @user.username)).not_to be_valid
     end
   end
     
