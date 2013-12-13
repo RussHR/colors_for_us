@@ -1,6 +1,7 @@
 class Favorite < ActiveRecord::Base
   attr_accessible :giver_id, :palette_id
   
+  validates :giver_id, :palette_id, presence: true
   validates_uniqueness_of :giver_id, :scope => [:palette_id]
   
   belongs_to :palette
