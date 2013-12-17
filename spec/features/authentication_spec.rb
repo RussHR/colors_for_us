@@ -20,6 +20,7 @@ describe "the signup process" do
     
     it "redirects to index/home" do
       expect(page).to have_content("signed up successfully")
+      expect(page).to have_content("Sign Out")
     end
   end
 end
