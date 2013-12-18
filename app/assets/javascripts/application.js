@@ -17,7 +17,6 @@
 //= require colors_for_us
 //= require colorpicker.js
 //= require jquery.modal.min.js
-//= require fabric
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
