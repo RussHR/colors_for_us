@@ -3,16 +3,16 @@
         id="the-canvas">
 </canvas>
 
-<script type="text/javascript">
+<script>
   var canvas = new fabric.Canvas('the-canvas');
   
-  <% left_pos = @each_width / 2 %>
+  <% left_pos = 0 %>
   <% @palette.real_colors.each do |color| %>
     var rect = new fabric.Rect({
       left: <%= left_pos %>,
-      top: <%= params[:height].to_f / 2%>,
+      top: 0,
       fill: '<%= color %>',
-      width: <%= @each_width %>,
+      width: <%= @each_width + 1 %>,
       height: <%= params[:height] %>
     });
   
