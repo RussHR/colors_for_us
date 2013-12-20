@@ -4,7 +4,7 @@ ColorsForUs::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'registrations'}
   resources :authentications, :only => [:index, :create, :destroy]
   
-  resources :palettes, :only => [:index, :create, :show] do
+  resources :palettes, :only => [:index, :create, :show, :destroy] do
     resource :wallpaper, :only => [:show]
   end
   

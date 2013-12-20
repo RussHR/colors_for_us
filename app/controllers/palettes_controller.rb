@@ -24,4 +24,14 @@ class PalettesController < ApplicationController
     @palette = Palette.includes(:favorites, :creator).find(params[:id])
     render :json => @palette, :include => [:favorites, :creator]
   end
+  
+  def destroy
+    @palette = Palette.find(params[:id])
+    
+    if @palette.creator_id == current_user.id && @palette.destroy
+      render :json => @palette
+    else
+      render :json => @palette.errors.full_messages, :status => 422
+    end
+  end
 end
