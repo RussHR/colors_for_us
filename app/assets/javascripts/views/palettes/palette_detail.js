@@ -5,7 +5,8 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
     "click .favorite-button": "toggleFavorite",
     "click .unfavorite-button": "toggleFavorite",
     "click .create-wallpapers": "openWallpapersModal",
-    "click #generate-wallpaper": "generateWallpaper"
+    "click #generate-wallpaper": "generateWallpaper",
+    "click #delete-palette": "deletePalette"
   },
   
   toggleFavorite: function(event) {
@@ -64,6 +65,24 @@ ColorsForUs.Views.PaletteDetail = Backbone.View.extend({
     console.log(url);
     
     window.open(url);
+  },
+  
+  deletePalette: function(event) {
+    event.preventDefault();
+    var deleteResponse = confirm(
+        "Are you sure you want to delete this palette?");
+        
+    if (deleteResponse) {
+      this.model.destroy(
+        success: function(model) {
+          console.log("You deleted the palette!");
+          Backbone.history.navigate(
+            "/users/" + model.get("creator_id"), 
+            {trigger: true}
+          );
+        }  
+      );
+    }
   },
   
   render: function() {
